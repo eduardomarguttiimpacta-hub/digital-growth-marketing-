@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clube de Assinatura de Cervejas | Descubra Rótulos Raros</title>
+
+  <!-- 
+    PALETA (tema cerveja premium):
+    - Primária: #7A4A1E (âmbar/malte)
+    - Secundária: #1F1F1F (preto carvão)
+    - Destaque: #D9A441 (dourado)
+    - Fundo: #F7F5F2 (off-white)
+    - Sucesso/Confiança: #2E7D32 (verde escuro)
+  -->
+
+  <style>
+    /* =========================
+       RESET E BASE (Mobile First)
+       ========================= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #F7F5F2;
+      color: #1F1F1F;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+
+    /* =========================
+       COMPONENTES REUTILIZÁVEIS
+       ========================= */
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: #7A4A1E;
+      color: #FFFFFF;
+    }
+    .btn--primary:hover { background: #643B18; }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .container {
+      padding: 1.2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    /* =========================
+       HEADER / NAV
+       Objetivo CRO: CTA sempre acessível no mobile
+       ========================= */
+    header {
+      position: sticky;
+      top: 0;
+      background: #1F1F1F;
+      color: #FFFFFF;
+      z-index: 10;
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav__logo {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .nav__cta {
+      font-size: 0.9rem;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero {
+      padding: 2rem 0;
+    }
+    .hero__subtitle {
+      margin: 0.75rem 0 1.2rem;
+      color: #444;
+    }
+    .hero__media {
+      background: #DDD;
+      border-radius: 12px;
+      aspect-ratio: 16 / 9;
+      margin-top: 1.5rem;
+    }
+
+    /* =========================
+       SEÇÕES GERAIS
+       ========================= */
+    section { margin-bottom: 2.5rem; }
+
+    /* =========================
+       BENEFÍCIOS
+       ========================= */
+    .benefits__item p { font-size: 0.9rem; color: #555; }
+
+    /* =========================
+       PROVA SOCIAL
+       ========================= */
+    .social-proof__stats {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    /* =========================
+       PLANOS
+       ========================= */
+    .plan--featured {
+      border: 2px solid #D9A441;
+    }
+
+    /* =========================
+       FORMULÁRIO
+       ========================= */
+    form label {
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      display: block;
+    }
+    form input, form select {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.25rem;
+      border-radius: 6px;
+      border: 1px solid #CCC;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer {
+      background: #1F1F1F;
+      color: #FFF;
+      padding: 2rem 1.2rem;
+      font-size: 0.85rem;
+    }
+
+    /* =========================
+       BREAKPOINT DESKTOP
+       ========================= */
+    @media (min-width: 768px) {
+      h1 { font-size: 2.2rem; }
+      .grid--3 { grid-template-columns: repeat(3, 1fr); }
+      .grid--2 { grid-template-columns: repeat(2, 1fr); }
+      .nav__cta { font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER / NAV
+       ========================= -->
+  <header>
+    <nav class="nav container" aria-label="Navegação principal">
+      <div class="nav__logo">Clube Cervejeiro</div>
+      <a href="#form" class="btn btn--primary nav__cta" aria-label="Ir para assinatura">
+        Quero descobrir novas cervejas
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         1. HERO
+         Objetivo CRO: Valor imediato + ação
+         ========================= -->
+    <section class="hero container">
+      <h1>Experimente Rótulos Raros</h1>
+      <p class="hero__subtitle">
+        Receba seleções exclusivas escolhidas por sommeliers. Junte-se aos milhares que já evoluíram no ritual.
+      </p>
+      <a href="#form" class="btn btn--primary">Quero descobrir novas cervejas</a>
+
+      <!-- Variação comum: imagem ou vídeo silencioso -->
+      <div class="hero__media" role="img" aria-label="Imagem ilustrativa de cervejas artesanais"></div>
+    </section>
+
+    <!-- =========================
+         2. BENEFÍCIOS
+         ========================= -->
+    <section class="container">
+      <div class="grid grid--3 benefits">
+        <div class="card benefits__item">
+          <h3>Frescor garantido</h3>
+          <p>Cervejas selecionadas e enviadas no auge da qualidade.</p>
+        </div>
+        <div class="card benefits__item">
+          <h3>Curadoria de microlotes</h3>
+          <p>Rótulos difíceis de encontrar no varejo tradicional.</p>
+        </div>
+        <div class="card benefits__item">
+          <h3>Cancelamento simples</h3>
+          <p>Pause ou cancele quando quiser, sem burocracia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         3. PROVA SOCIAL
+         ========================= -->
+    <section class="container social-proof">
+      <div class="social-proof__stats">
+        <span>+10 mil assinaturas ativas</span>
+        <span>⭐ 4,9 de 5</span>
+      </div>
+      <div class="card">
+        <p>
+          “A cada mês descubro estilos novos sem perder tempo pesquisando.
+          Virou um ritual de fim de semana.”
+        </p>
+        <strong>— Lucas F., assinante há 14 meses</strong>
+      </div>
+    </section>
+
+    <!-- =========================
+         4. COMO FUNCIONA
+         ========================= -->
+    <section class="container">
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>1. Escolha o plano</h3>
+          <p>Selecione o volume ideal para seu consumo.</p>
+        </div>
+        <div class="card">
+          <h3>2. Curadoria especializada</h3>
+          <p>Sommeliers escolhem os rótulos do mês.</p>
+        </div>
+        <div class="card">
+          <h3>3. Receba e deguste</h3>
+          <p>Entrega mensal com conteúdo e ficha sensorial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         5. OFERTA E DIFERENCIAIS
+         ========================= -->
+    <section class="container">
+      <div class="card">
+        <h2>O que torna o clube único</h2>
+        <ul>
+          <li>Envio mensal</li>
+          <li>Ficha sensorial e harmonização</li>
+          <li>Rótulos exclusivos e sazonais</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================
+         6. PLANOS E PREÇOS
+         ========================= -->
+    <section class="container">
+      <div class="grid grid--3">
+        <div class="card">
+          <h3>Essencial</h3>
+          <p>250 g</p>
+        </div>
+        <div class="card plan--featured">
+          <h3>Clássico ⭐</h3>
+          <p>500 g</p>
+        </div>
+        <div class="card">
+          <h3>Sommelier</h3>
+          <p>1 kg</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         7. FAQ
+         ========================= -->
+    <section class="container">
+      <h2>Dúvidas frequentes</h2>
+      <div class="card">
+        <p><strong>Posso pausar a entrega?</strong><br />Sim, pelo painel do assinante.</p>
+        <p><strong>Posso trocar rótulos?</strong><br />Depende da disponibilidade do mês.</p>
+        <p><strong>Entregam na minha região?</strong><br />Atendemos todo o Brasil.</p>
+        <p><strong>Como funciona o frete?</strong><br />Valor fixo mensal.</p>
+        <p><strong>Há personalização?</strong><br />Sim, conforme preferências.</p>
+        <p><strong>Posso cancelar?</strong><br />A qualquer momento.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         8. GARANTIA E SEGURANÇA
+         ========================= -->
+    <section class="container">
+      <div class="card">
+        <h2>Garantia sem risco</h2>
+        <p>Satisfação garantida por 30 dias ou reenvio da seleção.</p>
+      </div>
+    </section>
+
+    <!-- =========================
+         9. FORMULÁRIO
+         ========================= -->
+    <section class="container" id="form">
+      <h2>Comece agora</h2>
+      <form aria-label="Formulário de assinatura">
+        <label>Nome
+          <input type="text" required />
+        </label>
+        <label>E-mail
+          <input type="email" required />
+        </label>
+        <label>Telefone
+          <input type="tel" />
+        </label>
+        <label>Plano
+          <select>
+            <option>Essencial</option>
+            <option selected>Clássico</option>
+            <option>Sommelier</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" required />
+          Concordo com a política de privacidade (LGPD)
+        </label>
+        <button type="submit" class="btn btn--primary" style="margin-top:1rem;">
+          Quero descobrir novas cervejas
+        </button>
+      </form>
+    </section>
+
+    <!-- =========================
+         10. CTA FINAL
+         ========================= -->
+    <section class="container">
+      <div class="card">
+        <h2>Transforme sua degustação em ritual</h2>
+        <a href="#form" class="btn btn--primary">Quero descobrir novas cervejas</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       11. RODAPÉ
+       ========================= -->
+  <footer>
+    <p>Clube Cervejeiro © 2025</p>
+    <p>CNPJ: 12.345.678/0001-90</p>
+    <p>Contato: contato@clubecervejeiro.com</p>
+    <p>Política de Privacidade | Termos de Uso</p>
+  </footer>
+
+</body>
+</html>
